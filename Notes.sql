@@ -9,14 +9,21 @@ CREATE TABLE Eleves (
     Matricule VARCHAR(100),
     Nom VARCHAR(100),
     Prenom VARCHAR(100),
-    Parcours VARCHAR(50)  -- 'Développement', 'BD_Réseaux', 'Web_Design'
+    Parcours VARCHAR(50)
+);
+
+CREATE TABLE UE (
+    id_ue INT PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(100),
+    id_semestre INT
 );
 
 CREATE TABLE Matiere(
     id_matiere INT PRIMARY KEY AUTO_INCREMENT,
     codeMatiere VARCHAR(100),
     nom VARCHAR(100),
-    credit INT
+    credit INT,
+    id_ue INT
 );
 
 CREATE TABLE Note (
@@ -38,45 +45,59 @@ CREATE TABLE SemestreFille (
 );
 
 -- =====================================================
--- 1. Insertion des matières (TOUS les parcours)
--- =====================================================
-INSERT INTO Matiere (codeMatiere, nom, credit) VALUES
--- Semestre 3 (tronc commun)
-('INF201', 'Programmation orientée objet', 6),
-('INF202', 'Bases de données objets', 6),
-('INF203', 'Programmation système', 4),
-('INF208', 'Réseaux informatiques', 6),
-('MTH201', 'Méthodes numériques', 4),
-('ORG201', 'Bases de gestion', 4),
-
--- Semestre 4 - Parcours Développement
-('INF204', 'Système d’information géographique', 6),
-('INF205', 'Système d’information', 6),
-('INF206', 'Interface Homme/Machine', 6),
-('INF207', 'Eléments d’algorithmique', 6),
-('INF210', 'Mini-projet de développement', 10),
-
--- Semestre 4 - Parcours BD/Réseaux
-('INF211', 'Mini-projet de bases de données et/ou de réseaux', 10),
-
--- Semestre 4 - Parcours Web/Design
-('INF209', 'Web dynamique', 6),
-('INF212', 'Mini-projet de Web et design', 10),
-
--- Semestre 4 - Maths communes
-('MTH202', 'Analyse des données', 4),
-('MTH203', 'MAO', 4),
-('MTH204', 'Géométrie', 4),
-('MTH205', 'Equations différentielles', 4),
-('MTH206', 'Optimisation', 4);
-
--- =====================================================
--- 2. Insertion des semestres
+-- 1. Insertion des semestres
 -- =====================================================
 INSERT INTO Semestre (nom) VALUES ('Semestre 3'), ('Semestre 4');
 
 -- =====================================================
--- 3. Liaison matières ↔ semestre
+-- 2. Insertion des UE (Unités d'Enseignement)
+-- =====================================================
+INSERT INTO UE (nom, id_semestre) VALUES
+-- Semestre 3 (id_semestre = 1)
+('Programmation et Algorithmique', 1),
+('Bases de Données et Réseaux', 1),
+('Mathématiques et Gestion', 1),
+-- Semestre 4 (id_semestre = 2)
+('Développement et SIG', 2),
+('Interface et Données', 2),
+('Projets Spécialisés', 2),
+('Mathématiques Appliquées', 2);
+
+-- =====================================================
+-- 3. Insertion des matières avec UE
+-- =====================================================
+INSERT INTO Matiere (codeMatiere, nom, credit, id_ue) VALUES
+-- Semestre 3 (tronc commun)
+('INF201', 'Programmation orientée objet', 6, 1),
+('INF202', 'Bases de données objets', 6, 2),
+('INF203', 'Programmation système', 4, 1),
+('INF208', 'Réseaux informatiques', 6, 2),
+('MTH201', 'Méthodes numériques', 4, 3),
+('ORG201', 'Bases de gestion', 4, 3),
+
+-- Semestre 4 - Parcours Développement
+('INF204', 'Système d’information géographique', 6, 4),
+('INF205', 'Système d’information', 6, 5),
+('INF206', 'Interface Homme/Machine', 6, 5),
+('INF207', 'Eléments d’algorithmique', 6, 1),
+('INF210', 'Mini-projet de développement', 10, 6),
+
+-- Semestre 4 - Parcours BD/Réseaux
+('INF211', 'Mini-projet de bases de données et/ou de réseaux', 10, 6),
+
+-- Semestre 4 - Parcours Web/Design
+('INF209', 'Web dynamique', 6, 5),
+('INF212', 'Mini-projet de Web et design', 10, 6),
+
+-- Semestre 4 - Maths communes
+('MTH202', 'Analyse des données', 4, 7),
+('MTH203', 'MAO', 4, 7),
+('MTH204', 'Géométrie', 4, 7),
+('MTH205', 'Equations différentielles', 4, 7),
+('MTH206', 'Optimisation', 4, 7);
+
+-- =====================================================
+-- 4. Liaison matières ↔ semestre
 -- =====================================================
 -- Semestre 3 (id_mere = 1)
 INSERT INTO SemestreFille (id_mere, id_matiere) VALUES
@@ -87,7 +108,7 @@ INSERT INTO SemestreFille (id_mere, id_matiere) VALUES
 (1, (SELECT id_matiere FROM Matiere WHERE codeMatiere = 'MTH201')),
 (1, (SELECT id_matiere FROM Matiere WHERE codeMatiere = 'ORG201'));
 
--- Semestre 4 (id_mere = 2) - toutes les matières S4
+-- Semestre 4 (id_mere = 2)
 INSERT INTO SemestreFille (id_mere, id_matiere) VALUES
 (2, (SELECT id_matiere FROM Matiere WHERE codeMatiere = 'INF204')),
 (2, (SELECT id_matiere FROM Matiere WHERE codeMatiere = 'INF205')),
@@ -104,7 +125,7 @@ INSERT INTO SemestreFille (id_mere, id_matiere) VALUES
 (2, (SELECT id_matiere FROM Matiere WHERE codeMatiere = 'MTH206'));
 
 -- =====================================================
--- 4. Insertion des 5 étudiants avec leur parcours
+-- 5. Insertion des 5 étudiants
 -- =====================================================
 INSERT INTO Eleves (Matricule, Nom, Prenom, Parcours) VALUES
 ('E001', 'Rakoto', 'Jean', 'Developpement'),
@@ -114,7 +135,7 @@ INSERT INTO Eleves (Matricule, Nom, Prenom, Parcours) VALUES
 ('E005', 'Ravelo', 'Hery', 'BD_Reseaux');
 
 -- =====================================================
--- 5. Insertion des notes SEMESTRE 3 (tous les étudiants)
+-- 6. Insertion des notes SEMESTRE 3
 -- =====================================================
 INSERT INTO Note (valeur, id_eleve, id_matiere) VALUES
 -- Jean Rakoto (1)
@@ -129,13 +150,10 @@ INSERT INTO Note (valeur, id_eleve, id_matiere) VALUES
 (13.00, 5, 1), (11.50, 5, 2), (12.00, 5, 3), (14.00, 5, 4), (10.50, 5, 5), (12.50, 5, 6);
 
 -- =====================================================
--- 6. Insertion des notes SEMESTRE 4 (selon parcours)
+-- 7. Insertion des notes SEMESTRE 4
 -- =====================================================
 
--- 📌 Parcours Développement (Jean Rakoto & Faneva Randria)
--- Matières: INF204, INF205, INF206, INF207, INF210 + 1 maths au choix
-
--- Jean Rakoto (id=1) - maths choisies: MTH204
+-- Parcours Développement - Jean Rakoto (1) - maths: MTH204
 INSERT INTO Note (valeur, id_eleve, id_matiere) VALUES
 (13.00, 1, (SELECT id_matiere FROM Matiere WHERE codeMatiere = 'INF204')),
 (14.00, 1, (SELECT id_matiere FROM Matiere WHERE codeMatiere = 'INF205')),
@@ -143,9 +161,8 @@ INSERT INTO Note (valeur, id_eleve, id_matiere) VALUES
 (11.00, 1, (SELECT id_matiere FROM Matiere WHERE codeMatiere = 'INF207')),
 (15.00, 1, (SELECT id_matiere FROM Matiere WHERE codeMatiere = 'INF210')),
 (14.00, 1, (SELECT id_matiere FROM Matiere WHERE codeMatiere = 'MTH204'));
--- autres maths NULL
 
--- Faneva Randria (id=4) - maths choisies: MTH205
+-- Parcours Développement - Faneva Randria (4) - maths: MTH205
 INSERT INTO Note (valeur, id_eleve, id_matiere) VALUES
 (17.00, 4, (SELECT id_matiere FROM Matiere WHERE codeMatiere = 'INF204')),
 (18.50, 4, (SELECT id_matiere FROM Matiere WHERE codeMatiere = 'INF205')),
@@ -154,10 +171,7 @@ INSERT INTO Note (valeur, id_eleve, id_matiere) VALUES
 (19.00, 4, (SELECT id_matiere FROM Matiere WHERE codeMatiere = 'INF210')),
 (18.00, 4, (SELECT id_matiere FROM Matiere WHERE codeMatiere = 'MTH205'));
 
--- 📌 Parcours BD_Réseaux (Miary Rabe & Hery Ravelo)
--- Matières: INF205 (obligatoire) + 1 au choix (INF204/INF206/INF207) + INF211 + 1 maths (MTH202/MTH205/MTH206) + MTH203
-
--- Miary Rabe (id=2) - choix: INF206, maths: MTH202
+-- Parcours BD_Réseaux - Miary Rabe (2) - choix: INF206, maths: MTH202
 INSERT INTO Note (valeur, id_eleve, id_matiere) VALUES
 (16.00, 2, (SELECT id_matiere FROM Matiere WHERE codeMatiere = 'INF205')),
 (14.50, 2, (SELECT id_matiere FROM Matiere WHERE codeMatiere = 'INF206')),
@@ -165,7 +179,7 @@ INSERT INTO Note (valeur, id_eleve, id_matiere) VALUES
 (15.00, 2, (SELECT id_matiere FROM Matiere WHERE codeMatiere = 'MTH202')),
 (14.00, 2, (SELECT id_matiere FROM Matiere WHERE codeMatiere = 'MTH203'));
 
--- Hery Ravelo (id=5) - choix: INF204, maths: MTH205
+-- Parcours BD_Réseaux - Hery Ravelo (5) - choix: INF204, maths: MTH205
 INSERT INTO Note (valeur, id_eleve, id_matiere) VALUES
 (13.00, 5, (SELECT id_matiere FROM Matiere WHERE codeMatiere = 'INF205')),
 (12.00, 5, (SELECT id_matiere FROM Matiere WHERE codeMatiere = 'INF204')),
@@ -173,10 +187,7 @@ INSERT INTO Note (valeur, id_eleve, id_matiere) VALUES
 (12.50, 5, (SELECT id_matiere FROM Matiere WHERE codeMatiere = 'MTH205')),
 (11.00, 5, (SELECT id_matiere FROM Matiere WHERE codeMatiere = 'MTH203'));
 
--- 📌 Parcours Web_Design (Tahiana Andriamaholy)
--- 1 UE parmi (INF204/INF205/INF206) + INF209 + INF212 + 1 maths (MTH202/MTH204/MTH206) + MTH203
-
--- Tahiana Andriamaholy (id=3) - choix: INF205, maths: MTH206
+-- Parcours Web_Design - Tahiana Andriamaholy (3) - choix: INF205, maths: MTH206
 INSERT INTO Note (valeur, id_eleve, id_matiere) VALUES
 (11.00, 3, (SELECT id_matiere FROM Matiere WHERE codeMatiere = 'INF205')),
 (10.00, 3, (SELECT id_matiere FROM Matiere WHERE codeMatiere = 'INF209')),
@@ -184,4 +195,24 @@ INSERT INTO Note (valeur, id_eleve, id_matiere) VALUES
 (11.00, 3, (SELECT id_matiere FROM Matiere WHERE codeMatiere = 'MTH206')),
 (10.50, 3, (SELECT id_matiere FROM Matiere WHERE codeMatiere = 'MTH203'));
 
-SELECT * FROM Note JOIN Matiere ON Note.id_matiere = Matiere.id_matiere JOIN Eleves ON Eleves.id = Note.id_eleve WHERE id_eleve = 1;;
+-- =====================================================
+-- 8. Requête de test
+-- =====================================================
+SELECT 
+    Eleves.id,
+    Eleves.Matricule,
+    Eleves.Nom,
+    Eleves.Prenom,
+    Matiere.codeMatiere,
+    Matiere.nom as matiere_nom,
+    Matiere.credit,
+    Note.valeur,
+    UE.nom as UE_nom,
+    Semestre.nom as semestre_nom
+FROM Note 
+JOIN Matiere ON Note.id_matiere = Matiere.id_matiere 
+JOIN Eleves ON Eleves.id = Note.id_eleve 
+JOIN UE ON UE.id_ue = Matiere.id_ue
+JOIN SemestreFille ON SemestreFille.id_matiere = Matiere.id_matiere
+JOIN Semestre ON Semestre.id_semestre = SemestreFille.id_mere
+WHERE Eleves.id = 1;
