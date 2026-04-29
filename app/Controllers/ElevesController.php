@@ -81,5 +81,11 @@ class ElevesController extends BaseController{
 
         return redirect()->to('/eleves')->with('message', 'Eleve supprime avec succes.');
     }
+    public function dashboard(){
+        $crudEleves = new CRUDEleves();
+        $metrics = $crudEleves->dashboardMetrics();
+
+        return view('dashboard', ['metrics' => $metrics]);
+    }
 }
 ?>

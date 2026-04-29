@@ -150,3 +150,228 @@ in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
  7 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
  8 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
  9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-29 08:02:41 --> Error: Class "App\Models\Note" not found
+[Method: GET, Route: dashboard]
+in APPPATH/Models/CRUDEleves.php on line 65.
+ 1 APPPATH/Controllers/ElevesController.php(23): App\Models\CRUDEleves->dashboardMetrics()
+ 2 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ElevesController->dashboard()
+ 3 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-29 08:05:27 --> Error: Class "App\Models\Note" not found
+[Method: GET, Route: dashboard]
+in APPPATH/Models/CRUDEleves.php on line 60.
+ 1 APPPATH/Controllers/ElevesController.php(23): App\Models\CRUDEleves->dashboardMetrics()
+ 2 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ElevesController->dashboard()
+ 3 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-29 08:05:28 --> Error: Class "App\Models\Note" not found
+[Method: GET, Route: dashboard]
+in APPPATH/Models/CRUDEleves.php on line 60.
+ 1 APPPATH/Controllers/ElevesController.php(23): App\Models\CRUDEleves->dashboardMetrics()
+ 2 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ElevesController->dashboard()
+ 3 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-29 08:06:16 --> Error: Class "App\Models\Note" not found
+[Method: GET, Route: dashboard]
+in APPPATH/Models/CRUDEleves.php on line 60.
+ 1 APPPATH/Controllers/ElevesController.php(86): App\Models\CRUDEleves->dashboardMetrics()
+ 2 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ElevesController->dashboard()
+ 3 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-29 08:06:17 --> Error: Class "App\Models\Note" not found
+[Method: GET, Route: dashboard]
+in APPPATH/Models/CRUDEleves.php on line 60.
+ 1 APPPATH/Controllers/ElevesController.php(86): App\Models\CRUDEleves->dashboardMetrics()
+ 2 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ElevesController->dashboard()
+ 3 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-29 08:06:18 --> Error: Class "App\Models\Note" not found
+[Method: GET, Route: dashboard]
+in APPPATH/Models/CRUDEleves.php on line 60.
+ 1 APPPATH/Controllers/ElevesController.php(86): App\Models\CRUDEleves->dashboardMetrics()
+ 2 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ElevesController->dashboard()
+ 3 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-29 08:06:18 --> Error: Class "App\Models\Note" not found
+[Method: GET, Route: dashboard]
+in APPPATH/Models/CRUDEleves.php on line 60.
+ 1 APPPATH/Controllers/ElevesController.php(86): App\Models\CRUDEleves->dashboardMetrics()
+ 2 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ElevesController->dashboard()
+ 3 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-29 08:06:18 --> Error: Class "App\Models\Note" not found
+[Method: GET, Route: dashboard]
+in APPPATH/Models/CRUDEleves.php on line 60.
+ 1 APPPATH/Controllers/ElevesController.php(86): App\Models\CRUDEleves->dashboardMetrics()
+ 2 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ElevesController->dashboard()
+ 3 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-29 08:06:18 --> Error: Class "App\Models\Note" not found
+[Method: GET, Route: dashboard]
+in APPPATH/Models/CRUDEleves.php on line 60.
+ 1 APPPATH/Controllers/ElevesController.php(86): App\Models\CRUDEleves->dashboardMetrics()
+ 2 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ElevesController->dashboard()
+ 3 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-29 08:06:18 --> Error: Class "App\Models\Note" not found
+[Method: GET, Route: dashboard]
+in APPPATH/Models/CRUDEleves.php on line 60.
+ 1 APPPATH/Controllers/ElevesController.php(86): App\Models\CRUDEleves->dashboardMetrics()
+ 2 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ElevesController->dashboard()
+ 3 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-29 08:06:19 --> Error: Class "App\Models\Note" not found
+[Method: GET, Route: dashboard]
+in APPPATH/Models/CRUDEleves.php on line 60.
+ 1 APPPATH/Controllers/ElevesController.php(86): App\Models\CRUDEleves->dashboardMetrics()
+ 2 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ElevesController->dashboard()
+ 3 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-29 08:08:41 --> Error: Class "App\Models\Note" not found
+[Method: GET, Route: dashboard]
+in APPPATH/Models/CRUDEleves.php on line 60.
+ 1 APPPATH/Controllers/ElevesController.php(86): App\Models\CRUDEleves->dashboardMetrics()
+ 2 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ElevesController->dashboard()
+ 3 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-29 08:08:42 --> Error: Class "App\Models\Note" not found
+[Method: GET, Route: dashboard]
+in APPPATH/Models/CRUDEleves.php on line 60.
+ 1 APPPATH/Controllers/ElevesController.php(86): App\Models\CRUDEleves->dashboardMetrics()
+ 2 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ElevesController->dashboard()
+ 3 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-29 08:08:42 --> Error: Class "App\Models\Note" not found
+[Method: GET, Route: dashboard]
+in APPPATH/Models/CRUDEleves.php on line 60.
+ 1 APPPATH/Controllers/ElevesController.php(86): App\Models\CRUDEleves->dashboardMetrics()
+ 2 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ElevesController->dashboard()
+ 3 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-29 08:08:42 --> Error: Class "App\Models\Note" not found
+[Method: GET, Route: dashboard]
+in APPPATH/Models/CRUDEleves.php on line 60.
+ 1 APPPATH/Controllers/ElevesController.php(86): App\Models\CRUDEleves->dashboardMetrics()
+ 2 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ElevesController->dashboard()
+ 3 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-29 08:08:42 --> Error: Class "App\Models\Note" not found
+[Method: GET, Route: dashboard]
+in APPPATH/Models/CRUDEleves.php on line 60.
+ 1 APPPATH/Controllers/ElevesController.php(86): App\Models\CRUDEleves->dashboardMetrics()
+ 2 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ElevesController->dashboard()
+ 3 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-29 08:08:43 --> Error: Class "App\Models\Note" not found
+[Method: GET, Route: dashboard]
+in APPPATH/Models/CRUDEleves.php on line 60.
+ 1 APPPATH/Controllers/ElevesController.php(86): App\Models\CRUDEleves->dashboardMetrics()
+ 2 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ElevesController->dashboard()
+ 3 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-29 08:08:43 --> Error: Class "App\Models\Note" not found
+[Method: GET, Route: dashboard]
+in APPPATH/Models/CRUDEleves.php on line 60.
+ 1 APPPATH/Controllers/ElevesController.php(86): App\Models\CRUDEleves->dashboardMetrics()
+ 2 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ElevesController->dashboard()
+ 3 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-29 08:08:43 --> Error: Class "App\Models\Note" not found
+[Method: GET, Route: dashboard]
+in APPPATH/Models/CRUDEleves.php on line 60.
+ 1 APPPATH/Controllers/ElevesController.php(86): App\Models\CRUDEleves->dashboardMetrics()
+ 2 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ElevesController->dashboard()
+ 3 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-29 08:08:43 --> Error: Class "App\Models\Note" not found
+[Method: GET, Route: dashboard]
+in APPPATH/Models/CRUDEleves.php on line 60.
+ 1 APPPATH/Controllers/ElevesController.php(86): App\Models\CRUDEleves->dashboardMetrics()
+ 2 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ElevesController->dashboard()
+ 3 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-29 08:08:52 --> Error: Class "App\Models\Note" not found
+[Method: GET, Route: dashboard]
+in APPPATH/Models/CRUDEleves.php on line 60.
+ 1 APPPATH/Controllers/ElevesController.php(86): App\Models\CRUDEleves->dashboardMetrics()
+ 2 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ElevesController->dashboard()
+ 3 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+ERROR - 2026-04-29 08:10:22 --> Unknown column 'Matiere.semestre' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 300.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(300): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Models/Note.php(48): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Models/CRUDEleves.php(70): App\Models\Note->nombreEtudiantsIntervalle()
+ 7 APPPATH/Controllers/ElevesController.php(86): App\Models\CRUDEleves->dashboardMetrics()
+ 8 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ElevesController->dashboard()
+ 9 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()

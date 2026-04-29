@@ -67,6 +67,19 @@ class Eleves
 
         return $result;
     }
+    public function getNombresEleves()
+    {
+        $builder = $this->db->table($this->table);
+        return $builder->countAllResults();
+    }
+    public function getNombresElevesByParcours()
+    {
+        $builder = $this->db->table($this->table);
+        $builder->select('Parcours, COUNT(*) as count');
+        $builder->groupBy('Parcours');
+        $query = $builder->get();
+        return $query->getResultArray();
+    }
 }
 
 ?>

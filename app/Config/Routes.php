@@ -13,3 +13,4 @@ $routes->get('/eleve/update/(:num)', 'ElevesController::update/$1');
 $routes->post('/eleve/update/(:num)', 'ElevesController::updateStore/$1');
 $routes->get('/eleves', 'ElevesController::index');
 $routes->post('/eleve/delete/(:num)', 'ElevesController::delete/$1');
+$routes->get('/dashboard', 'ElevesController::dashboard');
