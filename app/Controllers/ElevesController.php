@@ -5,6 +5,18 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\CRUDEleves;
 class ElevesController extends BaseController{
+    public function index(){
+        $q = trim((string) $this->request->getGet('q'));
+        $crudEleves = new CRUDEleves();
+        $eleves = $crudEleves->getEleves($q);
+
+        return view('list', [
+            'eleves' => $eleves,
+            'q' => $q,
+            'message' => session('message'),
+        ]);
+    }
+
     public function create(){
         return view('createeleve', ['message' => session('message')]);
     }
@@ -57,6 +69,17 @@ class ElevesController extends BaseController{
             return redirect()->back()->withInput()->with('message', 'Erreur lors de la mise à jour de l\'élève.');
         }
         return redirect()->to('/eleve/success');
+    }
+
+    public function delete($id){
+        $crudEleves = new CRUDEleves();
+        $deleted = $crudEleves->deleteEleve((int) $id);
+
+        if ($deleted === false) {
+            return redirect()->to('/eleves')->with('message', 'Erreur lors de la suppression de l\'eleve.');
+        }
+
+        return redirect()->to('/eleves')->with('message', 'Eleve supprime avec succes.');
     }
 }
 ?>

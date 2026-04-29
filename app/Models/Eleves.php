@@ -47,6 +47,7 @@ class Eleves
         $builder->orLike('Parcours', $critere);
         $query = $builder->get();
         return $query->getResultArray();
+    }
     public function getNotes()
     {
         $liste_notes = new Note();
