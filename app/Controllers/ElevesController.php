@@ -60,7 +60,6 @@ class ElevesController extends BaseController{
         $noteModel = new Note();
         $notesBySemestre = $noteModel->getNotesByEleveGroupedByUE($id_eleve);
 
-        // Calculer les moyennes
         $eleveModel = new Eleves();
         $eleveModel->id = $id_eleve;
         $moyennesBySemestre = [];
@@ -122,5 +121,7 @@ class ElevesController extends BaseController{
 
         return redirect()->to('/eleves')->with('message', 'Eleve supprime avec succes.');
     }
+}
+}
 }
 ?>

@@ -38,10 +38,8 @@ class Note extends Model
             $ue_id = $note['id_UE'] ?? 'autres';
             $semestre = $note['semestre'] ?? 'Non défini';
 
-            // Créer la clé unique pour chaque UE
             $ue_key = $semestre . '_' . $ue_id;
 
-            // Afficher la meilleure note pour chaque UE (première de la liste après ORDER BY DESC)
             if (!in_array($ue_key, $processedUE)) {
                 if (!isset($notesByUE[$semestre])) {
                     $notesByUE[$semestre] = [];
