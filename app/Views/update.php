@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SysInfo - Creation eleve</title>
+    <title>SysInfo - Modification eleve</title>
     <link rel="stylesheet" href="/assets/css/style.css" />
 </head>
 <body>
+
+<?php $eleveId = $eleve['id'] ?? ($eleve['Id'] ?? null); ?>
 
 <div class="app">
     <aside class="sidebar">
@@ -22,7 +24,8 @@
 
         <div class="sidebar-section">Navigation</div>
         <a href="/" class="nav-item">Accueil</a>
-        <a href="/eleve/create" class="nav-item active">Creation eleve</a>
+        <a href="/eleve/create" class="nav-item">Creation eleve</a>
+        <a href="/eleve/update/<?= $eleveId ?>" class="nav-item active">Modification eleve</a>
     </aside>
 
     <div class="main">
@@ -33,8 +36,8 @@
         <div class="content">
             <div class="page-header">
                 <div>
-                    <h2>Creation d'un eleve</h2>
-                    <div class="breadcrumb">Accueil / <span>Eleves</span> / Creation</div>
+                    <h2>Modification d'un eleve</h2>
+                    <div class="breadcrumb">Accueil / <span>Eleves</span> / Modification</div>
                 </div>
             </div>
 
@@ -45,32 +48,32 @@
                 </div>
             <?php endif; ?>
 
-            <form action="/eleve/create" method="post">
+            <form action="/eleve/update/<?= $eleveId ?>" method="post">
                 <div class="form-card section-gap">
                     <div class="form-section-title">Informations eleve</div>
 
                     <div class="form-grid">
                         <div>
                             <label class="field-label">Nom <span class="required">*</span></label>
-                            <input type="text" name="nom" value="<?= old('nom') ?>" required>
+                            <input type="text" name="nom" value="<?= esc(old('nom', $eleve['Nom'])) ?>" required>
                         </div>
                         <div>
                             <label class="field-label">Prenom <span class="required">*</span></label>
-                            <input type="text" name="prenom" value="<?= old('prenom') ?>" required>
+                            <input type="text" name="prenom" value="<?= esc(old('prenom', $eleve['Prenom'])) ?>" required>
                         </div>
                         <div>
                             <label class="field-label">Matricule <span class="required">*</span></label>
-                            <input type="text" name="matricule" value="<?= old('matricule') ?>" required>
+                            <input type="text" name="matricule" value="<?= esc(old('matricule', $eleve['Matricule'])) ?>" required>
                         </div>
                         <div>
                             <label class="field-label">Parcours <span class="required">*</span></label>
-                            <input type="text" name="parcours" value="<?= old('parcours') ?>" required>
+                            <input type="text" name="parcours" value="<?= esc(old('parcours', $eleve['Parcours'])) ?>" required>
                         </div>
                     </div>
 
                     <div class="form-footer">
-                        <a href="/eleve/create" class="btn btn-secondary">Annuler</a>
-                        <button type="submit" class="btn btn-primary">Creer</button>
+                        <a href="/eleve/create" class="btn btn-secondary">Retour</a>
+                        <button type="submit" class="btn btn-primary">Mettre a jour</button>
                     </div>
                 </div>
             </form>

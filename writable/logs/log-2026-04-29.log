@@ -1,0 +1,152 @@
+CRITICAL - 2026-04-29 06:53:37 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\CRUDEleves::create
+[Method: POST, Route: eleve/create]
+in SYSTEMPATH/Model.php on line 761.
+ 1 APPPATH/Models/CRUDEleves.php(7): CodeIgniter\Model->__call()
+ 2 APPPATH/Controllers/ElevesController.php(23): App\Models\CRUDEleves->createEleve()
+ 3 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ElevesController->store()
+ 4 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-29 06:54:03 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\CRUDEleves::create
+[Method: POST, Route: eleve/create]
+in SYSTEMPATH/Model.php on line 761.
+ 1 APPPATH/Models/CRUDEleves.php(7): CodeIgniter\Model->__call()
+ 2 APPPATH/Controllers/ElevesController.php(23): App\Models\CRUDEleves->createEleve()
+ 3 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ElevesController->store()
+ 4 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+ERROR - 2026-04-29 06:57:39 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /home/pc/Documents/GitHub/CodeITrio/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/pc/Documents/GitHub/CodeITrio/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/pc/Documents/GitHub/CodeITrio/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/pc/Documents/GitHub/CodeITrio/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/pc/Documents/GitHub/CodeITrio/system/Database/BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query()
+#4 /home/pc/Documents/GitHub/CodeITrio/system/Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/pc/Documents/GitHub/CodeITrio/system/BaseModel.php(899): CodeIgniter\Model->doInsert()
+#6 /home/pc/Documents/GitHub/CodeITrio/system/Model.php(668): CodeIgniter\BaseModel->insert()
+#7 /home/pc/Documents/GitHub/CodeITrio/app/Models/CRUDEleves.php(7): CodeIgniter\Model->insert()
+#8 /home/pc/Documents/GitHub/CodeITrio/app/Controllers/ElevesController.php(23): App\Models\CRUDEleves->createEleve()
+#9 /home/pc/Documents/GitHub/CodeITrio/system/CodeIgniter.php(951): App\Controllers\ElevesController->store()
+#10 /home/pc/Documents/GitHub/CodeITrio/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#11 /home/pc/Documents/GitHub/CodeITrio/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#12 /home/pc/Documents/GitHub/CodeITrio/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#13 /home/pc/Documents/GitHub/CodeITrio/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#14 /home/pc/Documents/GitHub/CodeITrio/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /home/pc/Documents/GitHub/CodeITrio/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /home/pc/Documents/GitHub/CodeITrio/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/pc/Documents/GitHub/CodeITrio/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/pc/Documents/GitHub/CodeITrio/system/Database/BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query()
+#3 /home/pc/Documents/GitHub/CodeITrio/system/Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+#4 /home/pc/Documents/GitHub/CodeITrio/system/BaseModel.php(899): CodeIgniter\Model->doInsert()
+#5 /home/pc/Documents/GitHub/CodeITrio/system/Model.php(668): CodeIgniter\BaseModel->insert()
+#6 /home/pc/Documents/GitHub/CodeITrio/app/Models/CRUDEleves.php(7): CodeIgniter\Model->insert()
+#7 /home/pc/Documents/GitHub/CodeITrio/app/Controllers/ElevesController.php(23): App\Models\CRUDEleves->createEleve()
+#8 /home/pc/Documents/GitHub/CodeITrio/system/CodeIgniter.php(951): App\Controllers\ElevesController->store()
+#9 /home/pc/Documents/GitHub/CodeITrio/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#10 /home/pc/Documents/GitHub/CodeITrio/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#11 /home/pc/Documents/GitHub/CodeITrio/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 /home/pc/Documents/GitHub/CodeITrio/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#13 /home/pc/Documents/GitHub/CodeITrio/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#14 {main}
+CRITICAL - 2026-04-29 06:57:39 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No such file or directory
+[Method: POST, Route: eleve/create]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH/Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 4 SYSTEMPATH/BaseModel.php(899): CodeIgniter\Model->doInsert()
+ 5 SYSTEMPATH/Model.php(668): CodeIgniter\BaseModel->insert()
+ 6 APPPATH/Models/CRUDEleves.php(7): CodeIgniter\Model->insert()
+ 7 APPPATH/Controllers/ElevesController.php(23): App\Models\CRUDEleves->createEleve()
+ 8 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ElevesController->store()
+ 9 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+ERROR - 2026-04-29 06:59:29 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /home/pc/Documents/GitHub/CodeITrio/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/pc/Documents/GitHub/CodeITrio/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/pc/Documents/GitHub/CodeITrio/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/pc/Documents/GitHub/CodeITrio/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/pc/Documents/GitHub/CodeITrio/system/Database/BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query()
+#4 /home/pc/Documents/GitHub/CodeITrio/system/Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/pc/Documents/GitHub/CodeITrio/system/BaseModel.php(899): CodeIgniter\Model->doInsert()
+#6 /home/pc/Documents/GitHub/CodeITrio/system/Model.php(668): CodeIgniter\BaseModel->insert()
+#7 /home/pc/Documents/GitHub/CodeITrio/app/Models/CRUDEleves.php(7): CodeIgniter\Model->insert()
+#8 /home/pc/Documents/GitHub/CodeITrio/app/Controllers/ElevesController.php(23): App\Models\CRUDEleves->createEleve()
+#9 /home/pc/Documents/GitHub/CodeITrio/system/CodeIgniter.php(951): App\Controllers\ElevesController->store()
+#10 /home/pc/Documents/GitHub/CodeITrio/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#11 /home/pc/Documents/GitHub/CodeITrio/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#12 /home/pc/Documents/GitHub/CodeITrio/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#13 /home/pc/Documents/GitHub/CodeITrio/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#14 /home/pc/Documents/GitHub/CodeITrio/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /home/pc/Documents/GitHub/CodeITrio/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /home/pc/Documents/GitHub/CodeITrio/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/pc/Documents/GitHub/CodeITrio/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/pc/Documents/GitHub/CodeITrio/system/Database/BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query()
+#3 /home/pc/Documents/GitHub/CodeITrio/system/Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+#4 /home/pc/Documents/GitHub/CodeITrio/system/BaseModel.php(899): CodeIgniter\Model->doInsert()
+#5 /home/pc/Documents/GitHub/CodeITrio/system/Model.php(668): CodeIgniter\BaseModel->insert()
+#6 /home/pc/Documents/GitHub/CodeITrio/app/Models/CRUDEleves.php(7): CodeIgniter\Model->insert()
+#7 /home/pc/Documents/GitHub/CodeITrio/app/Controllers/ElevesController.php(23): App\Models\CRUDEleves->createEleve()
+#8 /home/pc/Documents/GitHub/CodeITrio/system/CodeIgniter.php(951): App\Controllers\ElevesController->store()
+#9 /home/pc/Documents/GitHub/CodeITrio/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#10 /home/pc/Documents/GitHub/CodeITrio/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#11 /home/pc/Documents/GitHub/CodeITrio/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 /home/pc/Documents/GitHub/CodeITrio/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#13 /home/pc/Documents/GitHub/CodeITrio/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#14 {main}
+CRITICAL - 2026-04-29 06:59:29 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No such file or directory
+[Method: POST, Route: eleve/create]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH/Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 4 SYSTEMPATH/BaseModel.php(899): CodeIgniter\Model->doInsert()
+ 5 SYSTEMPATH/Model.php(668): CodeIgniter\BaseModel->insert()
+ 6 APPPATH/Models/CRUDEleves.php(7): CodeIgniter\Model->insert()
+ 7 APPPATH/Controllers/ElevesController.php(23): App\Models\CRUDEleves->createEleve()
+ 8 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ElevesController->store()
+ 9 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-29 07:09:06 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "updateeleve.php"
+[Method: GET, Route: eleve/update/1]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/ElevesController.php(40): view()
+ 4 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ElevesController->update()
+ 5 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-29 07:09:38 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "updateeleve.php"
+[Method: GET, Route: eleve/update/1]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/ElevesController.php(40): view()
+ 4 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ElevesController->update()
+ 5 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
