@@ -8,6 +8,7 @@ class Eleves extends Model
     protected $primaryKey = 'id';
     protected $allowedFields = ['Matricule', 'Nom', 'Prenom', 'Parcours'];
     protected $useTimestamps = false;
+
     
 }
 ?>

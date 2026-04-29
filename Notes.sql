@@ -183,3 +183,5 @@ INSERT INTO Note (valeur, id_eleve, id_matiere) VALUES
 (12.00, 3, (SELECT id_matiere FROM Matiere WHERE codeMatiere = 'INF212')),
 (11.00, 3, (SELECT id_matiere FROM Matiere WHERE codeMatiere = 'MTH206')),
 (10.50, 3, (SELECT id_matiere FROM Matiere WHERE codeMatiere = 'MTH203'));
+
+SELECT * FROM 
