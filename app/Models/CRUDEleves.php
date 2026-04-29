@@ -4,26 +4,17 @@ class CRUDEleves extends Eleves
 {
     public function createEleve($data)
     {
-        return self::create($data);
+        return $this->insert($data);
     }
 
     public function updateEleve($id, $data)
     {
-        $eleve = self::find($id);
-        if ($eleve) {
-            $eleve->update($data);
-            return $eleve;
-        }
-        return null;
+        return $this->update($id, $data);
     }
 
     public function deleteEleve($id)
     {
-        $eleve = self::find($id);
-        if ($eleve) {
-            return $eleve->delete();
-        }
-        return false;
+        return $this->delete($id);
     }
 }
 
