@@ -1,4 +1,5 @@
 <?php
+namespace App\Models;
 class CRUDEleves extends Eleves
 {
     public function createEleve($data)
