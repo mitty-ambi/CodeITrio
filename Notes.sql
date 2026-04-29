@@ -184,4 +184,4 @@ INSERT INTO Note (valeur, id_eleve, id_matiere) VALUES
 (11.00, 3, (SELECT id_matiere FROM Matiere WHERE codeMatiere = 'MTH206')),
 (10.50, 3, (SELECT id_matiere FROM Matiere WHERE codeMatiere = 'MTH203'));
 
-SELECT * FROM 
+SELECT * FROM Note JOIN Matiere ON Note.id_matiere = Matiere.id_matiere JOIN Eleves ON Eleves.id = Note.id_eleve WHERE id_eleve = 1;;
