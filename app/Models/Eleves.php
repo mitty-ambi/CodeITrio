@@ -50,22 +50,33 @@ class Eleves
     }
     public function getNotes()
     {
-        $liste_notes = new Note();
-        return $liste_notes->where("id_eleve", $this->id)->where("id")->findAll();
-    }
-    public function getNotesBySemestre($semestreNom)
-    {
-        $notes = $this->getNotes();
-        $result = [];
+        $noteModel = new Notes();
+        $notes = $noteModel->where('id_eleve', $this->id)->findAll();
 
+        $result = [];
         foreach ($notes as $note) {
-            $semestre = $note->getSemestre();
-            if ($semestre && $semestre->nom === $semestreNom) {
-                $result[] = $note;
-            }
+            $matiere = $note->getMatiere();
+            $result[$matiere->codeMatiere] = $note->valeur;
         }
 
         return $result;
+    }
+    public function MoyenneEleve($semestre)
+    {
+        $noteModel = new Note();
+        $notes = $noteModel->getNotesByEleveGroupedByUE($this->id);
+
+        $sommeTotal = 0;
+        $sommeCreditTotal = 0;
+
+        if (isset($notes[$semestre])) {
+            foreach ($notes[$semestre] as $note) {
+                $sommeTotal += $note['valeur'] * $note['credit'];
+                $sommeCreditTotal += $note['credit'];
+            }
+        }
+
+        return $sommeCreditTotal > 0 ? $sommeTotal / $sommeCreditTotal : 0;
     }
 }
 
