@@ -6,6 +6,6 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
-$routes->get('/', 'LivreController::index');
-$routes->get('/livres', 'LivreController::index');
-$routes->get('/livres/(:num)', 'LivreController::detail/$1');
+$routes->get('/eleve/create', 'ElevesController::create');
+$routes->post('/eleve/create', 'ElevesController::store');
+$routes->get('/eleve/success', 'ElevesController::success');
