@@ -12,5 +12,7 @@ $routes->get('/eleve/notes/(:num)', 'ElevesController::notesEleve/$1');
 $routes->get('/eleve/notes', 'ElevesController::notesEleve/1');
 $routes->get('/eleve/update/(:num)', 'ElevesController::update/$1');
 $routes->post('/eleve/update/(:num)', 'ElevesController::updateStore/$1');
+$routes->get('/', 'ElevesController::index');
+$routes->get('/eleve', 'ElevesController::index');
 $routes->get('/eleves', 'ElevesController::index');
 $routes->post('/eleve/delete/(:num)', 'ElevesController::delete/$1');

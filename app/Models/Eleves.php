@@ -48,32 +48,27 @@ class Eleves
         $query = $builder->get();
         return $query->getResultArray();
     }
-    public function getNotes()
-    {
-        $noteModel = new Notes();
-        $notes = $noteModel->where('id_eleve', $this->id)->findAll();
-
-        $result = [];
-        foreach ($notes as $note) {
-            $matiere = $note->getMatiere();
-            $result[$matiere->codeMatiere] = $note->valeur;
-        }
-
-        return $result;
-    }
-    public function MoyenneEleve($semestre)
+    public function getNotes($id_eleve)
     {
         $noteModel = new Note();
-        $notes = $noteModel->getNotesByEleveGroupedByUE($this->id);
+        return $noteModel->getNotesByEleve($id_eleve);
+    }
+
+    public function MoyenneEleve($id_eleve, $semestre)
+    {
+        $noteModel = new Note();
+        $notes = $noteModel->getNotesByEleve($id_eleve);
 
         $sommeTotal = 0;
         $sommeCreditTotal = 0;
 
-        if (isset($notes[$semestre])) {
-            foreach ($notes[$semestre] as $note) {
-                $sommeTotal += $note['valeur'] * $note['credit'];
-                $sommeCreditTotal += $note['credit'];
+        foreach ($notes as $note) {
+            if (($note['semestre'] ?? null) !== $semestre) {
+                continue;
             }
+
+            $sommeTotal += (float) ($note['valeur'] ?? 0) * (float) ($note['credit'] ?? 0);
+            $sommeCreditTotal += (float) ($note['credit'] ?? 0);
         }
 
         return $sommeCreditTotal > 0 ? $sommeTotal / $sommeCreditTotal : 0;
