@@ -1,11 +1,16 @@
 <?php
 
-
 namespace App\Controllers;
+
 use App\Controllers\BaseController;
 use App\Models\CRUDEleves;
-class ElevesController extends BaseController{
-    public function index(){
+use App\Models\Eleves;
+use App\Models\Note;
+
+class ElevesController extends BaseController
+{
+    public function index()
+    {
         $q = trim((string) $this->request->getGet('q'));
         $crudEleves = new CRUDEleves();
         $eleves = $crudEleves->getEleves($q);
@@ -17,10 +22,13 @@ class ElevesController extends BaseController{
         ]);
     }
 
-    public function create(){
+    public function create()
+    {
         return view('createeleve', ['message' => session('message')]);
     }
-    public function store(){
+
+    public function store()
+    {
         $nom = $this->request->getPost('nom');
         $prenom = $this->request->getPost('prenom');
         $matricule = $this->request->getPost('matricule');
@@ -37,13 +45,43 @@ class ElevesController extends BaseController{
         if ($inserted === false) {
             return redirect()->back()->withInput()->with('message', 'Erreur lors de la creation de l\'eleve.');
         }
-        
+
         return redirect()->to('/eleve/success');
     }
-    public function success(){
+
+    public function notesEleve($id_eleve = 1)
+    {
+        $db = \Config\Database::connect();
+        $eleve = $db->table('Eleves')->where('id', $id_eleve)->get()->getRowArray();
+
+        if (!$eleve) {
+            return redirect()->to('/')->with('error', 'Élève non trouvé');
+        }
+
+        $noteModel = new Note();
+        $notesBySemestre = $noteModel->getNotesByEleveGroupedByUE($id_eleve);
+
+        $eleveModel = new Eleves();
+        $eleveModel->id = $id_eleve;
+        $moyennesBySemestre = [];
+        foreach (array_keys($notesBySemestre) as $semestre) {
+            $moyennesBySemestre[$semestre] = $eleveModel->MoyenneEleve($semestre);
+        }
+
+        return view('liste_notes', [
+            'eleve' => $eleve,
+            'notesBySemestre' => $notesBySemestre,
+            'moyennesBySemestre' => $moyennesBySemestre
+        ]);
+    }
+
+    public function success()
+    {
         return view('createeleve', ['message' => 'Élève créé avec succès !']);
     }
-    public function update($id){
+
+    public function update($id)
+    {
         $crudEleves = new CRUDEleves();
         $eleve = $crudEleves->find($id);
         if (!$eleve) {
@@ -51,7 +89,9 @@ class ElevesController extends BaseController{
         }
         return view('update', ['eleve' => $eleve, 'message' => session('message')]);
     }
-    public function updateStore($id){
+
+    public function updateStore($id)
+    {
         $nom = $this->request->getPost('nom');
         $prenom = $this->request->getPost('prenom');
         $matricule = $this->request->getPost('matricule');
@@ -71,7 +111,8 @@ class ElevesController extends BaseController{
         return redirect()->to('/eleve/success');
     }
 
-    public function delete($id){
+    public function delete($id)
+    {
         $crudEleves = new CRUDEleves();
         $deleted = $crudEleves->deleteEleve((int) $id);
 
@@ -81,7 +122,9 @@ class ElevesController extends BaseController{
 
         return redirect()->to('/eleves')->with('message', 'Eleve supprime avec succes.');
     }
-    public function dashboard(){
+
+    public function dashboard()
+    {
         $crudEleves = new CRUDEleves();
         $metrics = $crudEleves->dashboardMetrics();
 
