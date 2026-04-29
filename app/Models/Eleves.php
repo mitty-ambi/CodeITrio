@@ -1,4 +1,5 @@
 <?php
+<<<<<<< Updated upstream
 namespace App\Models;
 
 use CodeIgniter\Database\Config;
@@ -24,6 +25,14 @@ class Eleves
         $query = $builder->get();
         return $query->getResultArray();
     }
+    public function findbyid($id)
+    {
+        $builder = $this->db->table($this->table);
+        $builder->where($this->primaryKey, $id);
+        $query = $builder->get();
+        return $query->getRowArray();
+    }
+    
     public function delete($id)
     {
         $builder = $this->db->table($this->table);
@@ -41,3 +50,6 @@ class Eleves
         return $query->getResultArray();
     }
 }
+
+?>
+
